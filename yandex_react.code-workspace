@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Project bloge/frontend-developer-canonicals-blog-customizer_starter/.storybook"
+		},
+		{
+			"path": "../../Project bloge/frontend-developer-canonicals-blog-customizer_starter/.husky"
+		}
+	],
+    "settings": {}
+}
