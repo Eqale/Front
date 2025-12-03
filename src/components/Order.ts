@@ -16,10 +16,11 @@ export class Order extends Form<IOrder> {
         this._card = container.elements.namedItem('card') as HTMLButtonElement;
         this._cash = container.elements.namedItem('cash') as HTMLButtonElement;
 
+        // обработчики
         if (this._cash) {
             this._cash.addEventListener('click', () => {
-                this._cash.classList.add('button_alt-active')
-                this._card.classList.remove('button_alt-active')
+                this._cash.classList.add('button_alt-active')// меняет внешний вид
+                this._card.classList.remove('button_alt-active')//меняет внешний вид
                 this.onInputChange('payment', 'cash')
             })
         }
@@ -33,11 +34,13 @@ export class Order extends Form<IOrder> {
         }
     }
 
+    //что бы кнопки выглядели неактивными
     disableButtons() {
         this._cash.classList.remove('button_alt-active')
         this._card.classList.remove('button_alt-active')
     }
 
+    //обновление поля адресса
     set address(value: string) {
         (this.container.elements.namedItem('address') as HTMLInputElement).value = value;
     }

@@ -22,19 +22,23 @@ export class Page extends Element<IPage> {
         this._wrapper = ensureElement<HTMLElement>('.page__wrapper');
         this._basket = ensureElement<HTMLElement>('.header__basket');
 
+        //обработка клика на корзину
         this._basket.addEventListener('click', () => {
         this.events.emit('basket:open');
         });
     }
 
+    //устанавливает текст в элемент
     set counter(value: number) {
         this.setText(this._counter, String(value));
     }
 
+    //заменячет весь контент галаери
     set store(items: HTMLElement[]) {
         this._store.replaceChildren(...items);
     }
 
+    //блокирует страницу
     set locked(value: boolean) {
         if (value) {
             this._wrapper.classList.add('page__wrapper_locked');

@@ -44,6 +44,8 @@ export class AppState extends Model<IAppState> {
     setItems() {
         this.order.items = this.basket.map(item => item.id)
     }
+
+    
     validateContacts() {
         const errors: typeof this.formErrors = {};
         if (!this.order.email) {

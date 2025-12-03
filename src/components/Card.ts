@@ -33,6 +33,7 @@ export class Card extends Element<ICard> {
         this._category = container.querySelector(`.${blockName}__category`);
         this._price = container.querySelector(`.${blockName}__price`);
 
+        //обработчик клика
         if (actions?.onClick) {
             if (this._button) {
                 this._button.addEventListener('click', actions.onClick);
@@ -71,7 +72,7 @@ export class Card extends Element<ICard> {
     set price(value: number | null) {
         this._price.textContent = value
         ? `${value} синапсов`
-        : `Бесценно`;
+        : `Бесценно`; // без цены
         if (this._button && !value) {
             this._button.disabled = true;
         }

@@ -5,7 +5,7 @@ interface ISuccessActions {
 }
 
 export interface ISuccess {
-    description: number;
+    description: number; // хранение списаных тубриков
 }
 
 export class Success extends Element<ISuccess> {
@@ -18,9 +18,10 @@ export class Success extends Element<ISuccess> {
         this._button = container.querySelector(`.${blockName}__close`);
         this._description = container.querySelector(`.${blockName}__description`);
 
-        if (actions?.onClick) {
+        // привзяка обработчика кликов
+        if (actions?.onClick) { // есть ли колбэк
             if (this._button) {
-                this._button.addEventListener('click', actions.onClick)
+                this._button.addEventListener('click', actions.onClick) // обработчик клика на кнопку закрытия
             }
         }
     }
